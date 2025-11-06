@@ -32,7 +32,7 @@ st.write("Pose your query to Kelly. A measured, poetic response awaits.")
 # Use Streamlit's secrets management for the API key.
 # For local testing, you can set it as an environment variable.
 try:
-    api_key = st.secrets["AIzaSyDSyUPOU7dDAUp52tg_FHaT4RL9aIOItXo"]
+    api_key = st.secrets["GOOGLE API KEY"]
     genai.configure(api_key=api_key)
 except (KeyError, FileNotFoundError):
     st.warning("API key not found. Please provide your Google API key in the sidebar.")
@@ -155,4 +155,5 @@ if api_key:
             st.error(f"An error occurred: {e}")
             st.info("This could be due to an invalid API key, network issues, or content restrictions.")
 else:
+
     st.info("The chatbot is awaiting your API key to begin.")
